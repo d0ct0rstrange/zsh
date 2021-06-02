@@ -194,8 +194,7 @@ bindsym $mod+Print exec gnome-screenshot -a
 # Flameshot when pressing Shift + Printscreen
 bindsym --release Shift+Print exec flameshot gui
 
-# Wallper randomize using feh
-# Run the following command once to generate ~/.fehbg file
+# Wallper randomize using feh from folder ~/Walls
 exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize  ~/Walls/*
 # Disable borders feh
 for_window [class=".*"] border pixel 0
