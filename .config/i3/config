@@ -31,7 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Polybar
-exec_always --no-startup-id /home/kali/.config/polybar/launch.sh --docky
+exec_always --no-startup-id /home/kali/.config/polybar/launch.sh --material
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -195,4 +195,8 @@ bindsym $mod+Print exec gnome-screenshot -a
 bindsym --release Shift+Print exec flameshot gui
 
 # Wallper randomize using feh
-exec feh --randomize --bg-fill ~/Walls/\*
+# Run the following command once to generate ~/.fehbg file
+exec_always --no-startup-id feh --no-fehbg --bg-fill --randomize  ~/Walls/*
+# Disable borders feh
+for_window [class=".*"] border pixel 0
+hide_edge_borders both
